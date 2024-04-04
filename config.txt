@@ -1,0 +1,5 @@
+// API: "command <time_in_seconds>"
+recording_delay <1>
+read_delay <1>
+tape_delay_one_position <1>
+tape_delay <1>
