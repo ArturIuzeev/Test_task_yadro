@@ -7,10 +7,11 @@
 
 struct config {
   std::map<std::string, unsigned int> values{
-      {        "recording_delay", 0},
+      {            "write_delay", 0},
       {             "read_delay", 0},
       {"tape_delay_one_position", 0},
-      {             "tape_delay", 0}
+      {             "tape_delay", 0},
+      {               "ram_size", 0}
   };
 
   void read_config(const std::string& file_name);

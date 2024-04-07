@@ -1,4 +1,4 @@
-#include "config.h"
+#include "../include/config.h"
 
 int config::check_correct_time(const std::string& time, const std::string& file_name) {
   if (time.size() < 2 || !time.starts_with('<') || !time.ends_with('>')) {
@@ -31,7 +31,7 @@ void config::read_config(const std::string& file_name) {
   }
   std::string line;
   while (std::getline(in, line)) {
-    if (line.size() >= 2 && std::equal(line.begin(), line.begin() + 2, "//")) {
+    if (line.size() >= 2 && std::equal(line.begin(), line.begin() + 2, "//") || line.empty()) {
       continue;
     }
 
