@@ -16,7 +16,7 @@ const std::string config_file = "config.txt";
 const std::string path = "../";
 
 const std::string c_file = "// API: \"command <time_in_seconds>\"\n"
-                           "ram_size <26214400>\n"
+                           "ram_size <0>\n"
                            "write_delay <0>\n"
                            "read_delay <0>\n"
                            "tape_delay_one_position <0>\n"

@@ -17,7 +17,7 @@ class tape {
   std::fstream file;
   config cf;
 
-  unsigned int ram_size;
+  unsigned int ram_size = 26214400;
   unsigned int write_delay;
   unsigned int read_delay;
   unsigned int tape_delay_one_position;

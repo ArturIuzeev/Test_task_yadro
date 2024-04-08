@@ -68,5 +68,7 @@ void tape::parse_config(config& c) {
   read_delay = c.values["read_delay"];
   tape_delay_one_position = c.values["tape_delay_one_position"];
   tape_delay = c.values["tape_delay"];
-  ram_size = c.values["ram_size"];
+  if (c.values["ram_size"]) {
+    ram_size = c.values["ram_size"];
+  }
 }

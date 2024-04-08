@@ -43,13 +43,13 @@ void merge_all_tmp(std::vector<std::unique_ptr<tape>>& tmp_tapes, tape& result,
   }
 
   std::make_heap(h.begin(), h.end(),
-                 [comparator](const std::pair<int, int>& a, const std::pair<int, int>& b) {
+                 [&comparator](const std::pair<int, int>& a, const std::pair<int, int>& b) {
                    return !comparator(a.first, b.first);
                  });
 
   while (!h.empty()) {
     std::pop_heap(h.begin(), h.end(),
-                  [comparator](const std::pair<int, int>& a, const std::pair<int, int>& b) {
+                  [&comparator](const std::pair<int, int>& a, const std::pair<int, int>& b) {
                     return !comparator(a.first, b.first);
                   });
 
@@ -62,7 +62,7 @@ void merge_all_tmp(std::vector<std::unique_ptr<tape>>& tmp_tapes, tape& result,
     if (tmp_tapes[item.second]->has_next()) {
       h.emplace_back(tmp_tapes[item.second]->read_cur(), item.second);
       std::push_heap(h.begin(), h.end(),
-                     [comparator](const std::pair<int, int>& a, const std::pair<int, int>& b) {
+                     [&comparator](const std::pair<int, int>& a, const std::pair<int, int>& b) {
                        return !comparator(a.first, b.first);
                      });
     }
